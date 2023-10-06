@@ -29,5 +29,8 @@ int main(int argc, char const *argv[])
 	clientes->insertarHobby(3, "Luisita", new Hobby("tennis", 2));
 	clientes->insertarHobby(3, "Luisita", new Hobby("futbol", 2));
 	clientes->insertarHobby(4, "Paulie", new Hobby("tennis", 5));
+
+	clientes->imprimir();
+	
     return 0;
 }

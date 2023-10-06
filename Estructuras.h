@@ -162,15 +162,6 @@ struct ListaSimple{
 		}
 		return NULL;
 	}
-
-	/*
-		recorre una lista de hijos actualizando las estadistica del hobby de todos los hijos
-	*/
-
-	// returns a new ListaHobbies with just distinct hobbies of children
-	// I: none, the referenced list
-	// O: ListaSimpleHobbies
-
 };
 
 // struct Cliente
@@ -192,24 +183,19 @@ struct Cliente{
 		salario = inSalario;
 		hijos = new ListaSimple ();
 	}
-	// Imprimir los datos del cliente	
 	void imprimir (){
-		//ListaSimpleHobbies * distinctHobbies = hijos->getDistinctHobbies();
 		cout << "Cliente #" << id << ":\t" << nombre;
 		cout << "\tSalario: " << salario <<endl;
-		//cout << "Hobbies distintos: " << distinctHobbies->largo() <<endl;
-		//distinctHobbies->imprimir();
 		cout <<endl;
 		hijos->imprimir();
 		cout <<"-----------------------------"<<endl<<endl;
 	}
 };
 
-// estructura nodo para lista simple
 struct Nodo {
-       //int dato; // parte de datos
+     
        Cliente * cliente;
-       Nodo* siguiente;// puntero para enlazar nodos
+       Nodo* siguiente;
        Nodo* anterior;
        
        Nodo(){
@@ -279,11 +265,8 @@ struct ListaDoble {
 		temp = temp->siguiente;
 	}
 	return i;
-  }   
-	  
-	// funcion que inserta un nodo nuevo al final de la lista
-	// entradas: el dato a guardar
-	// salidas: no tiene
+ 	 }
+
 	void insertarAlFinal (Cliente * cliente)
 	{
 	     // si no hay elementos
@@ -339,6 +322,5 @@ struct ListaDoble {
 		}
 	}
 
-  
-   
+	double PromedioFrecuenciaDeHobby(string hobby);
 };

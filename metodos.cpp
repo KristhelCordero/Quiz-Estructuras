@@ -1,9 +1,5 @@
 #include "Estructuras.h"
 
-
-// funcion que inserta un nodo nuevo en la lista
-// entradas: el dato a guardar
-// salidas: no tiene
 void ListaSimple::insertar (Hijo * hijo)
 {
      // si no hay elementos
@@ -20,10 +16,6 @@ void ListaSimple::insertar (Hijo * hijo)
      }
 }
 
-// funcion que recorre toda la lista con pt tmp
-// imprimiendo en consola cada dato de nodos
-// entradas no tiene
-// salidas: no tiene, solo imprime en consola
 void ListaSimple::imprimir(void)
 {
      NodoHijo *tmp = primerNodo;
@@ -35,4 +27,8 @@ void ListaSimple::imprimir(void)
            tmp = tmp->siguiente;
      }
      cout << endl;
+}
+
+double ListaDoble::PromedioFrecuenciaDeHobby(string hobby){
+    
 }
