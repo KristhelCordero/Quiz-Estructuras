@@ -48,7 +48,6 @@ struct ListaSimpleHobbies{
 	ListaSimpleHobbies (){
 		primerNodo = ultimoNodo = NULL;
 	}
-	
 	//imprimir lista de hobbies
 	void imprimir(){
 		NodoHobby *tmp = primerNodo;
@@ -61,10 +60,6 @@ struct ListaSimpleHobbies{
 		}
  		cout << endl;
 	}
-
-
-	
-
 	//exists
 	bool exists(string nombre){
 		NodoHobby *tmp = primerNodo;
@@ -77,7 +72,6 @@ struct ListaSimpleHobbies{
 		}
  		return false;
 	}
-	
 	//imprimir lista de hobbies
 	int largo(){
 		NodoHobby *tmp = primerNodo;
@@ -91,9 +85,7 @@ struct ListaSimpleHobbies{
  		return counter;
 	}
 
-
-	void insertar(Hobby * hobby)
-	{
+	void insertar(Hobby * hobby){
 		// si no hay elementos
 		if (primerNodo == NULL)
 		{
@@ -106,6 +98,16 @@ struct ListaSimpleHobbies{
 			nuevo->siguiente = primerNodo;
 			primerNodo = nuevo; 
 		}
+	}
+
+	double cantidadDeVecesPracticado(string nombre){
+		NodoHobby *tmp = primerNodo;
+		while (tmp != NULL){
+			if (tmp->hobby->nombre == nombre)
+				return tmp->hobby->cantidad;
+ 		   tmp = tmp->siguiente;
+		}
+ 		return 0;
 	}
 };
 // END: Hobby------------------------------------------------------
@@ -162,6 +164,8 @@ struct ListaSimple{
 		}
 		return NULL;
 	}
+	double cantidadHijosPractican(string hobby);
+	double cantidadVecesPorSemana(string hobby);
 };
 
 // struct Cliente
@@ -193,7 +197,6 @@ struct Cliente{
 };
 
 struct Nodo {
-     
        Cliente * cliente;
        Nodo* siguiente;
        Nodo* anterior;
@@ -322,5 +325,5 @@ struct ListaDoble {
 		}
 	}
 
-	double PromedioFrecuenciaDeHobby(string hobby);
+	double promedioFrecuenciaDeHobby(string hobby);
 };
