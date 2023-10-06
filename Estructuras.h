@@ -109,6 +109,8 @@ struct ListaSimpleHobbies{
 		}
  		return 0;
 	}
+
+	void actualizarFrecuenciaHobby(string hobby, int frecuencia);
 };
 // END: Hobby------------------------------------------------------
 
@@ -326,4 +328,5 @@ struct ListaDoble {
 	}
 
 	double promedioFrecuenciaDeHobby(string hobby);
+	void actualizarFrecuencia(string nombre, string hobby, int frecuencia);
 };

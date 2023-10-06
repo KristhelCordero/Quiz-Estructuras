@@ -49,19 +49,39 @@ double ListaSimple::cantidadVecesPorSemana(string hobby){
 
 double ListaDoble::promedioFrecuenciaDeHobby(string hobby){
     Nodo * tmp= primerNodo;
-    if (primerNodo==NULL)
-        return 0;
     double cantidadHijosPractican;
     double sumaVecesPracticado;
     while (tmp != NULL){
         cantidadHijosPractican+=tmp->cliente->hijos->cantidadHijosPractican(hobby);
+        cout<<cantidadHijosPractican<<endl;
         sumaVecesPracticado+=tmp->cliente->hijos->cantidadVecesPorSemana(hobby);
+        cout<<sumaVecesPracticado<<endl;
         tmp = tmp->siguiente;
     }
+    cout << "--------------------------------------------------"<<endl;
     if (cantidadHijosPractican==0)
         return 0;
     else
         return sumaVecesPracticado/cantidadHijosPractican;
 }
+
+// void ListaSimpleHobbies::actualizarFrecuenciaHobby(string hobby, int frecuencia){
+//     NodoHobby *tmp = primerNodo;
+// 	while (tmp != NULL){
+// 		if (tmp->hobby->nombre == nombre)
+			
+//  		tmp = tmp->siguiente;
+// 	}
+ 	
+// }
+
+// void ListaDoble::actualizarFrecuencia(string nombre, string hobby, int frecuencia){
+//     Nodo * tmp= primerNodo;
+//     while (tmp != NULL){
+        
+//         tmp = tmp->siguiente;
+//     }
+
+// }
 
 

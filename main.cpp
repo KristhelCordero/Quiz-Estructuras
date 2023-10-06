@@ -31,7 +31,9 @@ int main(int argc, char const *argv[])
 	clientes->insertarHobby(4, "Paulie", new Hobby("tennis", 5));
 
 	clientes->imprimir();
+	
+	cout << "--------------------------------------------------"<<endl;
 	cout << clientes->promedioFrecuenciaDeHobby("tennis")<<endl;
-	cout << "No entiendo que pasaaaa" <<endl;
+	
     return 0;
 }
