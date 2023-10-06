@@ -168,6 +168,7 @@ struct ListaSimple{
 	}
 	double cantidadHijosPractican(string hobby);
 	double cantidadVecesPorSemana(string hobby);
+	void actualizarFrecuenciaHoobiesHijos(string nombre, string hobby, int frecuencia);
 };
 
 // struct Cliente

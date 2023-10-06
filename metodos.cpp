@@ -65,23 +65,39 @@ double ListaDoble::promedioFrecuenciaDeHobby(string hobby){
         return sumaVecesPracticado/cantidadHijosPractican;
 }
 
-// void ListaSimpleHobbies::actualizarFrecuenciaHobby(string hobby, int frecuencia){
-//     NodoHobby *tmp = primerNodo;
-// 	while (tmp != NULL){
-// 		if (tmp->hobby->nombre == nombre)
-			
-//  		tmp = tmp->siguiente;
-// 	}
- 	
-// }
+void ListaSimpleHobbies::actualizarFrecuenciaHobby(string hobby, int frecuencia){
+    NodoHobby *tmp = primerNodo;
+    bool actualizado=false;
+    Hobby * nuevoHobby;
+	while (tmp != NULL){
+		if (tmp->hobby->nombre == hobby){
+            actualizado=true;
+            tmp->hobby->cantidad+=frecuencia;
+        } 
+ 		tmp = tmp->siguiente;
+	}
+    if (!actualizado){
+        nuevoHobby=new Hobby(hobby, frecuencia);
+        insertar(nuevoHobby);
+    }
+}
 
-// void ListaDoble::actualizarFrecuencia(string nombre, string hobby, int frecuencia){
-//     Nodo * tmp= primerNodo;
-//     while (tmp != NULL){
-        
-//         tmp = tmp->siguiente;
-//     }
+void ListaSimple::actualizarFrecuenciaHoobiesHijos(string nombre, string hobby, int frecuencia){
+    NodoHijo * tmp= primerNodo;
+    while (tmp != NULL){
+        if (tmp->hijo->nombre==nombre){
+            tmp->hijo->hobbies->actualizarFrecuenciaHobby(hobby, frecuencia);
+        }
+        tmp = tmp->siguiente;
+    }
+}
 
-// }
+void ListaDoble::actualizarFrecuencia(string nombre, string hobby, int frecuencia){
+    Nodo * tmp= primerNodo;
+    while (tmp != NULL){
+        tmp->cliente->hijos->actualizarFrecuenciaHoobiesHijos(nombre, hobby, frecuencia);
+        tmp = tmp->siguiente;
+    }
+}
 
 

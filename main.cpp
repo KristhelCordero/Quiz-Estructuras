@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 	clientes->insertarHijo("Paco", 4,"Paquinha", 11);
 	clientes->insertarHijo("Luisa", 4,"Luisita", 11);
 	clientes->insertarHijo("Paula", 4,"Paulie", 11);
-
+	clientes->insertarHijo("Luisa", 6,"Paquinha", 13);
 
 	clientes->insertarHobby(1, "Paquinha", new Hobby("tennis", 2));
 	clientes->insertarHobby(1, "Paquinha", new Hobby("PS4", 4));
@@ -29,11 +29,16 @@ int main(int argc, char const *argv[])
 	clientes->insertarHobby(3, "Luisita", new Hobby("tennis", 2));
 	clientes->insertarHobby(3, "Luisita", new Hobby("futbol", 2));
 	clientes->insertarHobby(4, "Paulie", new Hobby("tennis", 5));
+	clientes->insertarHobby(3, "Paquinha", new Hobby("futbol", 3));
 
 	clientes->imprimir();
 	
 	cout << "--------------------------------------------------"<<endl;
 	cout << clientes->promedioFrecuenciaDeHobby("tennis")<<endl;
 	
+	clientes->actualizarFrecuencia("Paquinha","futbol",4);
+	cout << "----------------FRECUENCIA ACTUALIZADA-----------------"<<endl;
+	clientes->imprimir();
+
     return 0;
 }
