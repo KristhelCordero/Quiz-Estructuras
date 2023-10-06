@@ -55,9 +55,7 @@ double ListaDoble::promedioFrecuenciaDeHobby(string hobby){
     double sumaVecesPracticado;
     while (tmp != NULL){
         cantidadHijosPractican+=tmp->cliente->hijos->cantidadHijosPractican(hobby);
-        cout<<cantidadHijosPractican<<endl;
         sumaVecesPracticado+=tmp->cliente->hijos->cantidadVecesPorSemana(hobby);
-        cout<<sumaVecesPracticado<<endl;
         tmp = tmp->siguiente;
     }
     if (cantidadHijosPractican==0)
